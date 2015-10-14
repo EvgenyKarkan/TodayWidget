@@ -477,6 +477,7 @@
 				04AE63B71BCE5DF300BAF817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04AE63CB1BCE5E4B00BAF817 /* Build configuration list for PBXNativeTarget "Today Extension" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +486,7 @@
 				04AE63CD1BCE5E4B00BAF817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

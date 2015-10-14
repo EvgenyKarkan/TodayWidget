@@ -12,7 +12,6 @@
 @interface TodayViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *reloadButton;
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

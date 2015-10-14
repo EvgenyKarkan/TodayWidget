@@ -7,21 +7,40 @@
 //
 
 #import "ViewController.h"
+#import <NotificationCenter/NotificationCenter.h>
+
 
 @interface ViewController ()
 
+@property (nonatomic, strong) NSUserDefaults* defaults;
+
 @end
+
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    //accessing the same shared container 'group.today.widget'
+    self.defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.today.widget"];
+    
+    [self.defaults setObject: @"TestTokenValue" forKey: @"token"];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+#pragma mark - Action
+
+- (IBAction)buttonPressed:(UIButton *)sender
+{
+    // store another yet data
+    [self.defaults setObject: @(42) forKey: @"worldSecret"];
+    
+    // YES - widget will be visible
+    // NO  - widget won't be visible
+    [[NCWidgetController widgetController] setHasContent: YES
+                           forWidgetWithBundleIdentifier: @"com.prophonix.widget.app.todayextension"];
 }
 
 @end
