@@ -63,7 +63,15 @@
 	if (self.imageView.frame.size.height == 100) {
 		[UIView animateWithDuration: 0.3f animations: ^{
 		    self.imageView.frame = CGRectMake(20, 36, 260, 128);
-		}];
+		} completion:^(BOOL finished) {
+			if (finished) {
+				UIView* mockView = [[UIView alloc] init];
+				mockView.frame = CGRectMake(20, 36, 300, 150);
+				mockView.backgroundColor = [UIColor cyanColor];
+				
+				[self.view addSubview: mockView];
+			}
+		} ];
 	}
 	else {
 		[UIView animateWithDuration: 0.3f animations: ^{
