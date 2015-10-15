@@ -19,28 +19,27 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
 	[super viewDidLoad];
-	
-    //accessing the same shared container 'group.today.widget'
-    self.defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.today.widget"];
-    
-    [self.defaults setObject: @"TestTokenValue" forKey: @"token"];
-    
+
+	//accessing the same shared container 'group.today.widget'
+    self.defaults = [[NSUserDefaults alloc] initWithSuiteName: @"group.today.widget"];
+
+	[self.defaults setObject: @"TestTokenValue" forKey: @"token"];
 }
 
 #pragma mark - Action
 
-- (IBAction)buttonPressed:(UIButton *)sender
+- (IBAction) buttonPressed: (UIButton*) sender
 {
-    // store another yet data
-    [self.defaults setObject: @(42) forKey: @"worldSecret"];
-    
-    // YES - widget will be visible
-    // NO  - widget won't be visible
-    [[NCWidgetController widgetController] setHasContent: YES
-                           forWidgetWithBundleIdentifier: @"com.prophonix.widget.app.todayextension"];
+	// store another yet data
+	[self.defaults setObject: @(42) forKey: @"worldSecret"];
+
+	// YES - widget will be visible
+	// NO  - widget won't be visible
+	[[NCWidgetController widgetController] setHasContent: YES
+	                       forWidgetWithBundleIdentifier: @"com.prophonix.widget.app.todayextension"];
 }
 
 @end
